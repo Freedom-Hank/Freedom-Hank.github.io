@@ -1,30 +1,92 @@
+/* ====================================
+   基本設定 (Base Styles)
+   ==================================== */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    text-align: center;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
+    color: #333; /* 文字顏色 */
+    background-color: #f4f4f4; /* 背景顏色 */
+}
+h1 {
+    font-size: 2.5rem; /* 調整字體大小 */
+    text-align: left; /* 讓文字靠左 */
+    margin: 0;
+    padding: 0;
+    padding-left: 30px;
 }
 
+/* 標誌裡的連結樣式 */
+h1 a {
+    color: #7fffd4; /* 類似圖片中的藍色 */
+    text-decoration: none; /* 移除底線 */
+    font-weight: bold; /* 讓字體變粗 */
+}
+
+
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+/* ====================================
+   版面配置 (Layout)
+   ==================================== */
 header {
-    background-color: #7fffd4c9;
+    background-color: #333;
     color: black;
+    display: flex;
+    justify-content: space-between; /* 將標題推向左邊，導覽列推向右邊 */
+    align-items: center; /* 讓內容垂直居中 */
     padding: 20px 0;
 }
 
-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
+nav {
+    padding: 1rem; /* 內部間距 */
+    display: flex; /* 讓導覽列項目水平排列 */
+    justify-content: flex-end; /* 將內容靠右對齊 */
 }
 
-main {
-    padding: 20px;
+section {
+    padding: 2rem;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    background-color: #eee;
-    padding: 10px 0;
-    margin-top: 20px;
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
 }
+
+/* ====================================
+   元件樣式 (Component Styles)
+   ==================================== */
+nav ul {
+    list-style-type: none; /* 移除點點 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    margin-right: 20px; /* 增加項目之間的間距 */
+}
+
+nav a {
+    text-decoration: none; /* 移除連結下劃線 */
+    color: white; /* 設定連結顏色 */
+    font-size: 1.2rem; /* 設定字體大小 */
+    padding: 10px; /* 增加點擊區域 */
+}
+
+nav a:hover {
+    color: #7fffd4; /* 改變滑鼠懸停時的顏色 */
+}
+

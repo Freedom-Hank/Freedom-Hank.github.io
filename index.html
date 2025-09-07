@@ -2,5 +2,29 @@
 layout: default
 title: 首頁
 ---
-<h2>歡迎來到我的網站！</h2>
-<p>這裡會展示我的作品、經驗，以及預約頁面。</p>
+
+<section id="about">
+    {% capture about_content %}{% include about_me.md %}{% endcapture %}
+    {{ about_content | markdownify }}
+</section>
+
+<section id="education">
+    <h2>教育經歷</h2>
+</section>
+
+<section id="skills">
+    <h2>我的技能</h2>
+    <ul>
+        <li>程式語言： Python, C++, kotlin</li>
+        <li>網頁技術： HTML, CSS, Jekyll</li>
+        <li>框架與工具： Git, GitHub</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>聯絡我</h2>
+    <p>
+        如果你對我的作品感興趣，歡迎透過以下方式與我聯絡：
+        電子郵件：<a href="mailto:hank3192@gmail.com">hank3192@gmail.com</a>
+    </p>
+</section>
