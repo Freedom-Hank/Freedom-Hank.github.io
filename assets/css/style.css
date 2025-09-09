@@ -148,6 +148,7 @@ nav a:hover {
         align-items: flex-start;
         padding: 15px 10px; /* 統一頁首的內邊距，避免左右留白不一致 */
         height: auto; /* 讓頁首高度自動適應內容 */
+        gap: 10px; /* 減少頁首內部元素之間的間距 */
     }
 
     /* 調整 header 的 logo 與 nav 的對齊 */
@@ -178,6 +179,7 @@ nav a:hover {
         gap: 15px; /* 稍微減少方框間距 */
     }
     section {
+        padding-top: 150px; /* 增加上方內邊距以避免內容被頁首遮擋 */    
         padding: 1.5rem 10px; /* 減少 section 的內邊距，增加內容顯示空間 */
     }
 }
