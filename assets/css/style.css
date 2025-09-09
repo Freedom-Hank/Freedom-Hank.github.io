@@ -142,28 +142,42 @@ nav a:hover {
    響應式設計 (Responsive Design)
    ==================================== */
 @media (max-width: 768px) {
+    /* 調整 header 樣式 */
     header {
+        flex-direction: column; 
+        align-items: flex-start;
+        padding: 15px 10px; /* 統一頁首的內邊距，避免左右留白不一致 */
+        height: auto; /* 讓頁首高度自動適應內容 */
+    }
+
+    /* 調整 header 的 logo 與 nav 的對齊 */
+    header .logo {
+        padding-bottom: 10px;
+    }
+    header nav {
+        width: 100%; /* 讓導覽列在手機上佔據整個寬度 */
+    }
+    header nav ul {
         flex-direction: column;
         align-items: flex-start;
-        padding-bottom: 10px;
-    }
-    .logo {
-        padding-bottom: 10px;
-    }
-    nav {
+        width: 100%;
+        margin: 0;
         padding: 0;
     }
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    nav li {
+    header nav li {
         margin-right: 0;
+        padding: 5px 0; /* 增加上下間距讓連結更易於點擊 */
     }
+    header nav a {
+        font-size: 1rem; /* 降低字體大小以適應小螢幕 */
+    }
+
+    /* 調整內容區塊的排版 */
     .box-container {
         flex-direction: column;
+        gap: 15px; /* 稍微減少方框間距 */
     }
     section {
-        padding: 2rem 10px;
+        padding: 1.5rem 10px; /* 減少 section 的內邊距，增加內容顯示空間 */
     }
 }
