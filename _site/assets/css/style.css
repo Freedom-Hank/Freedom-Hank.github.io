@@ -18,11 +18,11 @@ body {
 header {
     background-color: #333;
     display: flex;
-    justify-content: space-between; /* 將標題推向左邊，導覽列推向右邊 */
     align-items: center; /* 讓內容垂直居中 */
-    padding: 20px 0;
+    padding: 20px 105px; /* 增加左右內邊距 */
+    gap: 840px;
 
-     /* 讓頁首固定在頂部 */
+    /* 讓頁首固定在頂部 */
     position: fixed; /* 將頁首從正常文檔流中移除，並固定在視口 */
     top: 0; /* 讓它緊貼視口頂部 */
     width: 100%; /* 確保它佔滿整個寬度 */
