@@ -3,10 +3,10 @@
    ==================================== */
 
 body {
+    padding-top: 80px; /* 預留空間給固定的頁首 */
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 0;
     color: #333; /* 文字顏色 */
     background-color: #f4f4f4; /* 背景顏色 */
 }
@@ -21,6 +21,12 @@ header {
     justify-content: space-between; /* 將標題推向左邊，導覽列推向右邊 */
     align-items: center; /* 讓內容垂直居中 */
     padding: 20px 0;
+
+     /* 讓頁首固定在頂部 */
+    position: fixed; /* 將頁首從正常文檔流中移除，並固定在視口 */
+    top: 0; /* 讓它緊貼視口頂部 */
+    width: 100%; /* 確保它佔滿整個寬度 */
+    z-index: 1000; /* 確保它在其他內容之上 */
 }
 
 nav {
