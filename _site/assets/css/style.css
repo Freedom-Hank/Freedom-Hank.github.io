@@ -36,18 +36,12 @@ nav {
 }
 
 section {
-    padding: 2rem;
-    margin-bottom: 1rem;
+    max-width: 1600px;
+    margin: 0 auto 1rem; /* 讓區塊置中並保留下方間距 */
+    padding: 2rem 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-section {
-    max-width: 1600px;
-    margin-left: auto; /* 自動計算左邊距 */
-    margin-right: auto; /* 自動計算右邊距 */
-    padding: 2rem 20px; /* 增加左右內邊距，防止內容緊貼螢幕邊緣 */
 }
 
 footer {
@@ -106,6 +100,11 @@ nav a:hover {
     color: #7fffd4; /* 改變滑鼠懸停時的顏色 */
 }
 
+/* 讓錨點連結不會被固定頁首遮擋 */
+:target {
+    scroll-margin-top: 80px;
+}
+
 /* ====================================
    方框樣式 (Box Styles)
    ==================================== */
@@ -137,4 +136,34 @@ nav a:hover {
 .box-container p {
     color: #4169e1; /* 文字顏色 */
     font-weight: bold; /* 讓文字變粗 */
+}
+
+/* ====================================
+   響應式設計 (Responsive Design)
+   ==================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 10px;
+    }
+    .logo {
+        padding-bottom: 10px;
+    }
+    nav {
+        padding: 0;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav li {
+        margin-right: 0;
+    }
+    .box-container {
+        flex-direction: column;
+    }
+    section {
+        padding: 2rem 10px;
+    }
 }
