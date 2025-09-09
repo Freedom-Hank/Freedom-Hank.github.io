@@ -15,9 +15,6 @@ jobs:
           submodules: true
 
       - uses: actions/setup-ruby@v1
-        with:
-          ruby-version: '2.7'
-          bundler-version: '2.3.7'
 
       - run: bundle install
       - run: bundle exec jekyll build
