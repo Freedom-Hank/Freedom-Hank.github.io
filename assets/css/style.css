@@ -19,8 +19,8 @@ header {
     background-color: #333;
     display: flex;
     align-items: center; /* 讓內容垂直居中 */
-    padding: 20px 105px; /* 增加左右內邊距 */
-    gap: 840px;
+    padding: 20px 30px; /* 減少左右內邊距，避免 LOGO 跑版 */
+    gap: 40px; /* 減少 gap，避免 LOGO 跑到兩行 */
 
     /* 讓頁首固定在頂部 */
     position: fixed; /* 將頁首從正常文檔流中移除，並固定在視口 */
@@ -139,47 +139,57 @@ nav a:hover {
 }
 
 /* ====================================
-   響應式設計 (Responsive Design)
-   ==================================== */
+    響應式設計 (Responsive Design)
+    ==================================== */
 @media (max-width: 768px) {
-    /* 調整 header 樣式 */
-    header {
-        flex-direction: column; 
-        align-items: flex-start;
-        padding: 15px 10px; /* 統一頁首的內邊距，避免左右留白不一致 */
-        height: auto; /* 讓頁首高度自動適應內容 */
-        gap: 10px; /* 減少頁首內部元素之間的間距 */
-    }
+     /* 調整 header 樣式 */
+     header {
+          flex-direction: column; 
+          align-items: stretch;
+          padding: 10px 5px;
+          height: auto;
+          gap: 5px;
+          max-height: none;
+          overflow-y: visible;
+     }
 
-    /* 調整 header 的 logo 與 nav 的對齊 */
-    header .logo {
-        padding-bottom: 10px;
-    }
-    header nav {
-        width: 100%; /* 讓導覽列在手機上佔據整個寬度 */
-    }
-    header nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    header nav li {
-        margin-right: 0;
-        padding: 5px 0; /* 增加上下間距讓連結更易於點擊 */
-    }
-    header nav a {
-        font-size: 1rem; /* 降低字體大小以適應小螢幕 */
-    }
+     /* 調整 header 的 logo 與 nav 的對齊 */
+     header .logo {
+          padding-bottom: 10px;
+          font-size: 2rem; /* LOGO 字體縮小避免換行 */
+          padding-left: 10px;
+          word-break: keep-all; /* 避免 LOGO 斷行 */
+     }
+     header nav {
+          width: 100%;
+     }
+     header nav ul {
+          flex-direction: row; /* 讓導覽列項目橫向排列 */
+          align-items: center;
+          justify-content: flex-start;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          overflow-x: auto; /* 若項目太多可橫向滾動 */
+          flex-wrap: nowrap; /* 不換行，橫向滾動 */
+     }
+     header nav li {
+          margin-right: 10px;
+          padding: 5px 0;
+          min-width: 90px; /* 增加每個項目寬度，避免文字換行 */
+     }
+     header nav a {
+          font-size: 0.85rem; /* 再縮小字體，避免換行 */
+          padding: 8px 4px;
+          white-space: nowrap; /* 防止文字換行 */
+     }
 
-    /* 調整內容區塊的排版 */
-    .box-container {
-        flex-direction: column;
-        gap: 15px; /* 稍微減少方框間距 */
-    }
-    section {
-        padding-top: 150px; /* 增加上方內邊距以避免內容被頁首遮擋 */    
-        padding: 1.5rem 10px; /* 減少 section 的內邊距，增加內容顯示空間 */
-    }
+     /* 調整內容區塊的排版 */
+     .box-container {
+          flex-direction: column;
+          gap: 15px;
+     }
+     section {
+          padding: 80px 10px 1.5rem 10px;
+     }
 }
